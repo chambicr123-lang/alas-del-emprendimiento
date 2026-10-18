@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi tienda - ALAS DEL EMPRENDIMIENTO</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/mi-tienda.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <div class="contenedor encabezado-contenido">
+            <a href="index.html" class="logo">
+                ALAS DEL EMPRENDIMIENTO
+            </a>
+
+            <nav class="navegacion">
+                <a href="index.html">Inicio</a>
+                <a href="perfil-tienda.html">Mi perfil público</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="administrar-tienda">
+        <section class="panel-tienda">
+
+            <div class="titulo-panel">
+                <span class="etiqueta-panel">PANEL DEL VENDEDOR</span>
+                <h1>Administra tu tienda</h1>
+                <p>
+                    Actualiza la información de tu negocio para que
+                    tus clientes puedan conocerte mejor.
+                </p>
+            </div>
+
+            <div id="mensajeTienda" class="mensaje-panel" hidden></div>
+
+            <form id="formularioEditarTienda">
+
+                <div class="campo-tienda">
+                    <label for="editarNombre">Nombre de la tienda</label>
+                    <input
+                        type="text"
+                        id="editarNombre"
+                        maxlength="100"
+                        placeholder="Ej.: Tecnología El Alto"
+                        required
+                    >
+                </div>
+
+                <div class="campo-tienda">
+                    <label for="editarDescripcion">Descripción del negocio</label>
+                    <textarea
+                        id="editarDescripcion"
+                        rows="4"
+                        maxlength="1000"
+                        placeholder="Describe los productos que ofreces..."
+                    ></textarea>
+                </div>
+
+                <div class="campo-tienda">
+                    <label for="editarCategoria">Categoría</label>
+                    <select id="editarCategoria" required>
+                        <option value="">Selecciona una categoría</option>
+                        <option value="Ropa">Ropa</option>
+                        <option value="Tecnología">Tecnología</option>
+                        <option value="Calzados">Calzados</option>
+                        <option value="Hogar">Hogar</option>
+                        <option value="Belleza">Belleza</option>
+                        <option value="Juguetes">Juguetes</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </div>
+
+                <div class="campo-tienda">
+                    <label for="editarUbicacion">Ubicación</label>
+                    <input
+                        type="text"
+                        id="editarUbicacion"
+                        maxlength="150"
+                        placeholder="Ej.: El Alto, La Paz"
+                    >
+                </div>
+
+                <div class="campo-tienda">
+                    <label for="editarRedSocial">Red social o enlace de contacto</label>
+                    <input
+                        type="text"
+                        id="editarRedSocial"
+                        maxlength="500"
+                        placeholder="Ej.: https://www.facebook.com/mitienda"
+                    >
+                </div>
+
+                <div class="campo-tienda">
+                    <label for="editarPortada">Cambiar portada de la tienda</label>
+                    <input
+                        type="file"
+                        id="editarPortada"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+                    <small>Formatos JPG, PNG o WebP. Máximo 5 MB.</small>
+                </div>
+
+                <div class="vista-previa-tienda">
+                    <p>Vista previa de la portada</p>
+                    <img
+                        id="vistaPreviaEditarPortada"
+                        src=""
+                        alt="Vista previa de la portada"
+                        hidden
+                    >
+                    <p id="sinPortada">Todavía no hay una portada seleccionada.</p>
+                </div>
+
+                <button
+                    type="submit"
+                    id="btnGuardarCambiosTienda"
+                    class="btn-principal"
+                >
+                    Guardar cambios
+                </button>
+
+            </form>
+
+            <div class="acciones-tienda">
+                <a href="index.html">Volver al inicio</a>
+                <a href="#" id="enlacePerfilPublico" hidden>
+                    Ver mi tienda pública
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/mi-tienda.js"></script>
+
+</body>
+</html>
